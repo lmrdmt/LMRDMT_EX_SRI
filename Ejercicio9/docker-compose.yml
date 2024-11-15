@@ -1,0 +1,33 @@
+services:
+  DNS:
+    image: internetsystemsconsortium/bind9:9.18
+    container_name: DNS_EXAMEN
+    ports:
+      - 54:53/udp
+      - 54:53/tcp
+    volumes:
+      - ./etc/bind:/etc/bind
+      - ./var/lib/bind:/var/lib/bind
+    #restart: always
+    networks:
+      P7_network:
+        ipv4_address: 172.16.0.1
+  Cliente:
+    image: ubuntu
+    container_name: Cliente_EXAMEN
+    tty: true
+    stdin_open: true
+    #command: /bin/sh -c "apt update && apt add bind-tools"
+    networks:
+      P7_network:
+        ipv4_address: 172.16.0.8
+    dns:
+      - 172.16.0.1
+networks:
+  P7_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.0.0/16
+          ip_range: 172.16.0.0/24
+          gateway: 172.16.0.254

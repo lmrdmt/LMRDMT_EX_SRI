@@ -1,0 +1,13 @@
+$TTL 86400 ;
+@ IN SOA ns.tendaelectronica.in some.email.address. (
+2024111401 ; Serial
+3600 ; Refresh
+1800 ; Retry
+36000 ; Expire
+86400 ; Minimum TTL
+)
+@ IN NS ns.tendaelectronica.int.
+ns IN A 172.16.0.1 
+www IN A 172.16.0.1
+alias IN CNAME www 
+texto IN TXT "1234ASDF" 
