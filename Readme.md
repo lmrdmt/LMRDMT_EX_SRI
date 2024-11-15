@@ -1,6 +1,3 @@
-Aquí tes un documento ben estruturado en formato Markdown que cumpre co solicitado:
-
-```markdown
 # Exame Docker
 
 Este repositorio contén as respostas e configuracións necesarias para completar o exame. Cada resposta está xustificada e inclúe exemplos prácticos.
@@ -162,8 +159,8 @@ Para probalo:
 
 ---
 
-## Resultados
 
-Os pasos anteriores permiten configurar e probar os contedores segundo as especificacións do exame.
-```
+
+
+
 
